@@ -106,6 +106,7 @@ public class MyPanelClass extends JPanel {
                         
                         //Star
                         Polygon star = new Polygon();
+                        
                         star.addPoint(width/6-15, height/4+20);
                         star.addPoint(width/6, height/4+20);
                         star.addPoint(width/6+5, height/4+5);
