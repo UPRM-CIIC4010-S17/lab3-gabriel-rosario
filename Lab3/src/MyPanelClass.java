@@ -7,11 +7,11 @@ import javax.swing.JPanel;
  
 public class MyPanelClass extends JPanel {
             /**
-	 * 
-	 */
-	private static final long serialVersionUID = 7057541440811488699L;
+     * 
+     */
+    private static final long serialVersionUID = 7057541440811488699L;
 
-			public void paintComponent(Graphics g) {
+            public void paintComponent(Graphics g) {
                         super.paintComponent(g);
  
                         //Compute interior coordinates
@@ -25,7 +25,7 @@ public class MyPanelClass extends JPanel {
  
                         //Paint the background
                         g.setColor(Color.BLUE);
-                        g.fillRect(x1, y1, width+1, height+1);
+                        //g.fillRect(x1, y1, width+1, height+1);
                         
                         /*
                         //Draw a border
@@ -74,6 +74,49 @@ public class MyPanelClass extends JPanel {
                         p2.addPoint(x1 + 34, y1 + 98);
                         p2.addPoint(x1 + 38, y1 + 83);
                         g.setColor(Color.WHITE);
-                        g.drawPolygon(p2);
+                        //g.drawPolygon(p2);
+                        
+                        //First Stripe
+                        g.setColor(Color.RED);
+                        g.fillRect(x1, y1, width+1, (height/5)+1);
+                        
+                        //Second Stripe
+                        g.setColor(Color.WHITE);
+                        g.fillRect(x1, y1+(height/5), width+1, (height/5)+1);
+                        
+                        //Third Stripe
+                        g.setColor(Color.RED);
+                        g.fillRect(x1, y1+(2*height/5), width+1, (height/5)+1);
+                        
+                        //Fourth Stripe
+                        g.setColor(Color.WHITE);
+                        g.fillRect(x1, y1+(3*height/5), width+1, (height/5)+1);
+                        
+                        //Fifth Stripe
+                        g.setColor(Color.RED);
+                        g.fillRect(x1, y1+(4*height/5+1), width+1, (height/5)+1);
+                        
+                        //Triangle
+                        Polygon t = new Polygon();
+                        t.addPoint(x1, y1);
+                        t.addPoint(width/2, height/2);
+                        t.addPoint(x1, y2);
+                        g.setColor(Color.BLUE);
+                        g.fillPolygon(t);
+                        
+                        //Star
+                        Polygon star = new Polygon();
+                        star.addPoint(width/6-15, height/4+20);
+                        star.addPoint(width/6, height/4+20);
+                        star.addPoint(width/6+5, height/4+5);
+                        star.addPoint(width/6+10, height/4+20);
+                        star.addPoint(width/6+25, height/4+20);
+                        star.addPoint(width/6+15, height/4+30);
+                        star.addPoint(width/6+20, height/4+45);
+                        star.addPoint(width/6+5, height/4+35);
+                        star.addPoint(width/6-10, height/4+45);
+                        star.addPoint(width/6-5, height/4+30);
+                        g.setColor(Color.WHITE);
+                        g.fillPolygon(star);
             }
 }
